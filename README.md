@@ -6,6 +6,8 @@ Use it during video calls by pulling it up in a new window, picking a color that
 
 Or open it on your phone and use it to add light to a photo.
 
+![screenshot](https://i.imgur.com/qivFjNt.png)
+
 
 ### Controls
 
