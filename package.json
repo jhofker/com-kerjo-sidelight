@@ -1,0 +1,28 @@
+{
+  "name": "Sidelight",
+  "version": "1.0.0",
+  "repository": "https://github.com/jhofker/com-kerjo-sidelight.git",
+  "author": "Jordan Hofker <jhofker@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
+    "eleventy:default": "cross-env ELEVENTY_ENV=prod eleventy",
+    "eleventy:watch": "eleventy --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "autoprefixer": "^9.6.0",
+    "cross-env": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "postcss": "^7.0.17",
+    "postcss-color-mix": "^1.1.0",
+    "postcss-comment": "^2.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.1",
+    "postcss-simple-vars": "^5.0.2",
+    "precss": "^4.0.0",
+    "terser": "^4.6.3"
+  }
+}

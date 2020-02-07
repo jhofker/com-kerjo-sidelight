@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="container">
+  <div id="light-01" class="panel">
+    <div class="selector">
+      <label>
+        <input type="text" id="text-01"/>
+      </label>
+      <label>
+        <input type="color" id="color-01"/>
+      </label>
+    </div>
+    <div id="presets-01" class="preset-container">
+      {% for preset in siteData.presets %}
+        <div 
+          color="{{ preset.color }}"
+          style="background-color: {{ preset.color }}"
+          class="preset">{{ preset.name }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

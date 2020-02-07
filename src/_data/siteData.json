@@ -1,0 +1,14 @@
+{
+  "name": "Sidelight - Well-Lit",
+  "description": "A simple tool to turn your browser window a specific color. On a video call? Open a window and use it to light your face.",
+  "presets": [
+    { "name": "candle", "color": "#FF9329" },
+    { "name": "dusk", "color": "#FFB81F" },
+    { "name": "tungsten", "color": "#FFC596" },
+    { "name": "halogen", "color": "#FFF1E0" },
+    { "name": "daylight", "color": "#FFFFFF" },
+    { "name": "fluorescent", "color": "#F4FFFA" },
+    { "name": "overcast", "color": "#C9E2FF" },
+    { "name": "twilight", "color": "#409CFF" }
+  ]
+}
