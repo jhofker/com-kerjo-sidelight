@@ -25,6 +25,8 @@ body {
 
 .selector {
   display: flex;
+  border-radius: 1rem;
+  padding: 2rem;
 }
 
 input {
@@ -33,7 +35,7 @@ input {
   cursor: pointer;
 }
 
-input[type="text"] {
+input[type='text'] {
   margin: 0 1rem 0 0;
   font-size: 1.8rem;
   box-sizing: border-box;
@@ -58,10 +60,11 @@ input[type="text"] {
   display: flex;
   justify-content: center;
   width: 5rem;
+  border-radius: 1rem 1rem 0 0;
   padding: 0 0.5rem 0.5rem;
   align-items: flex-end;
   text-transform: capitalize;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 input,

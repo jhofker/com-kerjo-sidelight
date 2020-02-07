@@ -1,24 +1,9 @@
 window.onload = () => {
   const light = document.getElementById('light-01');
+  const inputContainer = light.getElementsByClassName('selector')[0];
   const picker = document.getElementById('color-01');
   const text = document.getElementById('text-01');
   const presetContainer = document.getElementById('presets-01');
-
-  const brightness = color => {
-    const isHEX = color && color.indexOf('#') == 0;
-    if (isHEX) {
-      const m = color
-        .substr(1)
-        .match(color.length == 7 ? /(\S{2})/g : /(\S{1})/g);
-      if (m) {
-        const r = parseInt(m[0], 16);
-        const g = parseInt(m[1], 16);
-        const b = parseInt(m[2], 16);
-        return (r * 299 + g * 587 + b * 114) / 1000;
-      }
-    }
-    return 0;
-  };
 
   const generateRandomColor = () => {
     return '#000000'.replace(/0/g, function() {
@@ -26,8 +11,10 @@ window.onload = () => {
     });
   };
   const setColors = (color, includeInputs = false) => {
-    const isLight = brightness(color) > 128;
+    const tc = tinycolor(color);
+    const isLight = tc.isLight;
 
+    inputContainer.style.backgroundColor = color;
     light.style.backgroundColor = color;
     text.style.backgroundColor = color;
     text.style.color = isLight ? 'black' : 'white';
@@ -36,6 +23,12 @@ window.onload = () => {
       text.value = color;
       picker.value = color;
     }
+    const amount = 20;
+    const highlight = tc.lighten(amount).toString();
+    const lowlight = tc.darken(amount).toString();
+    const shadow = `20px 20px 60px ${lowlight}, -20px -20px 60px ${highlight}`;
+    inputContainer.style.boxShadow = shadow;
+    console.log(shadow);
 
     window.location.hash = color;
   };
@@ -62,6 +55,7 @@ window.onload = () => {
     opacity = opacity === hidden ? 1.0 : hidden;
 
     text.style.opacity = opacity;
+    inputContainer.opacity = opacity;
     presetContainer.style.opacity = opacity;
     picker.style.opacity = opacity;
   };

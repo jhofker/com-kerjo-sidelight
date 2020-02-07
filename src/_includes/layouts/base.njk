@@ -13,6 +13,7 @@
     {{ content | safe }}
 
     {% set js %}
+    {% include "../../../node_modules/tinycolor2/tinycolor.js" %}
     {% include "../../scripts/index.js" %}
     {% endset %}
     <script>

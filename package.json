@@ -24,5 +24,8 @@
     "postcss-simple-vars": "^5.0.2",
     "precss": "^4.0.0",
     "terser": "^4.6.3"
+  },
+  "dependencies": {
+    "tinycolor2": "^1.4.1"
   }
 }

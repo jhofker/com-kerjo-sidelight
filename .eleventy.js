@@ -3,6 +3,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
   eleventyConfig.addWatchTarget('./src/scripts/');
+  eleventyConfig.addWatchTarget('./src/styles/');
 
   eleventyConfig.addPassthroughCopy('./src/images');
 
