@@ -5,11 +5,6 @@ window.onload = () => {
   const text = document.getElementById('text-01');
   const presetContainer = document.getElementById('presets-01');
 
-  const generateRandomColor = () => {
-    return '#000000'.replace(/0/g, function() {
-      return (~~(Math.random() * 16)).toString(16);
-    });
-  };
   const setColors = (color, includeInputs = false) => {
     const tc = tinycolor(color);
     const isLight = tc.isLight;
@@ -23,11 +18,21 @@ window.onload = () => {
       text.value = color;
       picker.value = color;
     }
-    const amount = 20;
-    const highlight = tc.lighten(amount).toString();
-    const lowlight = tc.darken(amount).toString();
+    const amount = 10;
+    const highlight = tc
+      .clone()
+      .lighten(amount)
+      .toString();
+    const lowlight = tc
+      .clone()
+      .darken(amount)
+      .toString();
     const shadow = `20px 20px 60px ${lowlight}, -20px -20px 60px ${highlight}`;
     inputContainer.style.boxShadow = shadow;
+    inputContainer.style.borderBottom = `1px solid ${tc
+      .clone()
+      .setAlpha(0.2)
+      .toString()}`;
     console.log(shadow);
 
     window.location.hash = color;
@@ -61,7 +66,7 @@ window.onload = () => {
   };
 
   const loadColor = window.location.hash;
-  setColors(loadColor || generateRandomColor(), true);
+  setColors(loadColor || tinycolor.random().toHexString(), true);
 
   Array.from(document.getElementsByClassName('preset')).forEach(presetEl => {
     presetEl.addEventListener('click', handlePresetClick);
