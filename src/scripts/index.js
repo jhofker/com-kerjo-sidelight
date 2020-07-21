@@ -93,4 +93,5 @@ window.onload = () => {
   light.addEventListener('click', handleLightClick);
 
   fullscreenButton.addEventListener('click', toggleFullscreen);
+  fullscreenButton.style.display = document.fullscreenEnabled ? 'block' : 'none';
 };
