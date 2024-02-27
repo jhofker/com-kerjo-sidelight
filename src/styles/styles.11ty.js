@@ -22,7 +22,6 @@ module.exports = class {
   async render({ rawCss, rawFilepath }) {
     return await postcss([
       // require('postcss-comment'),
-      require('precss'),
       require('postcss-import'),
       require('postcss-mixins'),
       require('postcss-color-mix'),
